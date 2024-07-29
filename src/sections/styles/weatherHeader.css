@@ -1,0 +1,11 @@
+.WeatherHeader{
+    height: 30vh;
+    background: url('../../embeds/Clouds-Background-HD.jpg');
+
+}
+
+.WeatherHeader h1{
+    font-size: 20vh;
+    float: left;
+    color: white;
+}

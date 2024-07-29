@@ -17,27 +17,23 @@ const fetchLocation = async (city) => {
 }
 
 const formatResponse = (data) => {
-    const data1 = data.list[0];
-    return {
-        celcius:{
-            temp:convertToCelcius(data1.main.temp),
-            feels_like:convertToCelcius(data1.main.feels_like),
-            temp_min:convertToCelcius(data1.main.temp_min),
-            temp_max:convertToCelcius(data1.main.temp_max),
-        },
-        farenheit:{
-            temp: convertToFarenheit(data1.main.temp),
-            feels_like: convertToFarenheit(data1.main.feels_like),
-            temp_min: convertToFarenheit(data1.main.temp_min),
-            temp_max: convertToFarenheit(data1.main.temp_max),
-        },
-        humidity: data1.main.humidity + "%",
-        weather: data1.weather[0].description,
-        wind: data1.wind.speed + "m/s",
-        visibility: data1.visibility + "m",
-        date: data1.dt_txt,
-        icon_link: `http://openweathermap.org/img/w/${data1.weather[0].icon}.png`
-    }
+    const formattedData = [];
+    data.list.forEach((item) => {
+        formattedData.push({
+            date: item.dt_txt,
+            temp: convertToCelcius(item.main.temp),
+            feels_like: convertToCelcius(item.main.feels_like),
+            temp_min: convertToCelcius(item.main.temp_min),
+            temp_max: convertToCelcius(item.main.temp_max),
+            humidity: item.main.humidity,
+            weather: item.weather[0].description,
+            wind: item.wind.speed,
+            visibility: item.visibility,
+            icon_link: `http://openweathermap.org/img/w/${item.weather[0].icon}.png`,
+            pressure: item.main.pressure
+        });
+    })
+   return formattedData
 }
 
 const convertToCelcius = (temp) => {
@@ -47,4 +43,4 @@ const convertToFarenheit = (temp) => {
     return Math.floor((temp - 273.15) * 9 / 5 + 32) + "°F";
 }
 
-fetchWeather('Beijing').then(console.log);
+fetchWeather('London').then((data) => console.log(data[0]));
