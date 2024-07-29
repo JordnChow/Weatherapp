@@ -25,7 +25,7 @@ export const fetchWeather = async (city) => {
     const locationRaw = await fetchLocation(city);
     const lat = locationRaw.lat;
     const lon = locationRaw.lon;
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}`);
     // console.log(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}`)
     const data = await response.json();
     const formattedData = formatResponse(data)
@@ -33,7 +33,7 @@ export const fetchWeather = async (city) => {
 }
 
 const fetchLocation = async (city) => {
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${api_key}`);
+    const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${api_key}`);
     const data = await response.json();
     return data[0];
 }
