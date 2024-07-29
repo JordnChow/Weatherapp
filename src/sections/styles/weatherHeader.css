@@ -1,6 +1,6 @@
 .WeatherHeader{
     height: 40vh;
-    background: url('../../embeds/Clouds-Background-HD.jpg');
+    background: url('../../embeds/weathermapbg.png');
     background-size: cover;
     width: 100%;
 }

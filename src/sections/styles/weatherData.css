@@ -9,7 +9,6 @@
     margin: 0;
 }
 .WeatherData {
-    width: 70%;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -31,14 +30,17 @@
 }
 table {
     width: 100%;
-    border-collapse: collapse;
 }
 td {
     padding: 10px;
-    border-top: 1px solid #eee;
 }
-td:first-child, td:nth-child(3){
+#weather_stats2 td:first-child, td:nth-child(3),td:nth-child(5),td:nth-child(7){
     font-weight: bold;
+    border-left: 1px solid black;
+}
+
+#weather_stats2 td:last-child{
+    border-right: 1px solid black;
 }
 #temp_table{
     width: fit-content;
@@ -46,12 +48,14 @@ td:first-child, td:nth-child(3){
 }
 
 #weather_description{
+    flex:1;
     width: fit-content;
     float: right;
     text-align: right;
 }
 
 .weather_description2 tr{
+    flex:1;
     text-align: right;
     padding: none;
     margin: none;
@@ -87,4 +91,18 @@ td:first-child, td:nth-child(3){
     padding: 0;
     border-top: none;
     border-bottom: 1px solid rgb(124, 119, 119);
+   
+}
+
+.ForecastContainer table{
+    width: fit-content;
+    border-spacing: 30px;
+}
+
+.ForecastContainer td{
+    background: rgb(236, 203, 165);
+    border-radius: 5px;
+    border: none;
+    width:fit-content;
+    font-weight: normal;
 }

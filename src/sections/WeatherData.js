@@ -42,15 +42,13 @@ export default function WeatherData(props) {
                         </tbody>
                     </table>
                 </div>
-                <table>
+                <table id="weather_stats2">
                     <tbody>
                         <tr>
                             <td id="humidity">Humidity:</td>
                             <td>{props.humidity}%</td>
-                            <td id="weather">Weather:</td>
-                            <td>{props.weather}</td>
-                        </tr>
-                        <tr>
+                            <td id="weather">Wind:</td>
+                            <td>{props.wind}m/s</td>
                             <td id="pressure">Pressure:</td>
                             <td>{props.pressure} hPa</td>
                             <td id="visibility">Visibility:</td>
@@ -58,8 +56,31 @@ export default function WeatherData(props) {
                         </tr>
                     </tbody>
                 </table>
+                <table className="ForecastContainer">
+                    <tbody>
+                        <tr>
+                            {props.additionalDates.map((forecast, index) => (
+                                <td key={index} className="ForecastDay">
+                                    <p>{unixToDay(forecast.date_unix)}</p>
+                                    <img src={forecast.icon_link} alt="Weather Icon" />
+                                    <p>Temp: {forecast.temp}</p>
+                                    <p>Weather: {forecast.weather}</p>
+                                </td>
+                            ))}
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     )
 
+}
+
+function unixToDay(unix){
+    const date = new Date(unix * 1000)
+    const dayOfWeekIndex = date.getDay();
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const dayOfWeek = daysOfWeek[dayOfWeekIndex];
+    console.log(dayOfWeekIndex, dayOfWeek)
+    return dayOfWeek
 }

@@ -1,8 +1,48 @@
-*{
+* {
     margin: 0;
 }
 
-.WeatherDiv{
+body {
+    background: #f0f0f0
+}
+
+.WeatherDiv {
     display: block;
-   text-align: center;
+    text-align: center;
+}
+
+input[type="text"] {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+}
+
+button {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.input-container {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
 }
