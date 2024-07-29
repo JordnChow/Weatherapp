@@ -1,11 +1,12 @@
 .WeatherHeader{
-    height: 30vh;
+    height: 40vh;
     background: url('../../embeds/Clouds-Background-HD.jpg');
-
+    background-size: cover;
+    width: 100%;
 }
 
 .WeatherHeader h1{
-    font-size: 20vh;
+    font-size: 23vh;
     float: left;
     color: white;
 }

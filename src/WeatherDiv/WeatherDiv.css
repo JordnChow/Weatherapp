@@ -1,3 +1,8 @@
 *{
     margin: 0;
 }
+
+.WeatherDiv{
+    display: block;
+   text-align: center;
+}

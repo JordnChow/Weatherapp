@@ -1,16 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-table{
+.Weather_data_container {
+    font-family: Poppins, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.WeatherData {
+    width: 70%;
+    background-color: #fff;
     border-radius: 10px;
-    width: 30%;
-    background: grey;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.temperature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.temperature img {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+.temperature p {
+    margin: 0;
+    font-size: 18px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+td:first-child, td:nth-child(3){
+    font-weight: bold;
+}
+#temp_table{
+    width: fit-content;
+    float: left;
 }
 
-tr{
+#weather_description{
+    width: fit-content;
+    float: right;
+    text-align: right;
 }
 
-td{
-    padding: 30px;
-    font-family: poppins;
-    
+.weather_description2 tr{
+    text-align: right;
+    padding: none;
+    margin: none;
+    border: none;
+}
+
+#website{
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+}
+
+.temp_value{
+    font-size: 12px;
+    font-weight: bold;
+    color: #978d8d;
+
+}
+
+.temp_value_main{
+    font-size: 50px;
+    font-weight: 700;
+    color: #333;
+}
+
+.mini_temps tr{
+    text-align: left;
+    padding: none;
+    margin: none;
+}
+
+.mini_temps td{
+    padding: 0;
+    border-top: none;
+    border-bottom: 1px solid rgb(124, 119, 119);
 }
